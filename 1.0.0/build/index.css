@@ -1,6 +1,5 @@
 .pagination-page {
-  overflow: hidden;
-  display: inline-block;
+  float: left;
   line-height: 40px;
   color: #999;
   text-align: center;
