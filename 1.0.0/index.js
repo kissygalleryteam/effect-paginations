@@ -25,6 +25,9 @@ var EffectPaginations = Base.extend({
 
         // 动效开始
         container$.delegate('mouseenter', self.get('childHook'), function(ev){
+            
+            self.fire('start');
+
             pageAnimateTimer && pageAnimateTimer.stop(false);
             var currentItem$ = $(ev.currentTarget);
             var endX = currentItem$.offset().left - container$.offset().left,
@@ -55,8 +58,10 @@ var EffectPaginations = Base.extend({
 
         // 动效结束
         container$.delegate('mouseleave', '.item', function(ev){
-            pageAnimateTimer.isRunning() && pageAnimateTimer.stop(true);
 
+            self.fire('end');
+            
+            pageAnimateTimer.isRunning() && pageAnimateTimer.stop(true);
             var currentTarget$ = $(ev.currentTarget);
             var endX = curPageItem$.offset().left - container$.offset().left,
                 mask$ = container$.all('#mask');

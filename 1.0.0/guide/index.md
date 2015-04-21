@@ -6,11 +6,20 @@ EffectPaginations。
 ## 初始化组件
 		
     S.use('kg/effect-paginations/1.0.0/index,kg/effect-paginations/1.0.0/index.css', function (S, EffectPaginations) {
-        new EffectPaginations({
+        
+        var effectPaginations = new EffectPaginations({
             boxHook: '.pagination-page',
             childHook: '.item',
             curChildHook: '.item-sel'
         });
+
+        effectPaginations.on('start',function(){
+            console.log('start');
+        });
+        effectPaginations.on('end',function(){
+            console.log('end');
+        });
+
     })
 
 ## API说明
