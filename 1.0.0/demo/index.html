@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>EffectPaginations的demo</title>
+    <script src="//g.alicdn.com/kissy/k/1.4.8/seed-min.js" charset="utf-8"></script>
+<style type="text/css">
+body {
+    font-family: verdana,"Microsoft YaHei";
+    background: #d193b7;
+}
+#container{
+    text-align: center;
+}
+#container .wrap{
+    display: inline-block;
+    margin-top: 165px;
+}
+.pagination-page {
+float: left;
+line-height: 40px;
+color: #999;
+text-align: center;
+}
+div.page-siblings {
+width: auto;
+height: 39px;
+border: 2px solid #fff;
+}
+.pagination-page div.page-wrap {
+float: left;
+display: inline-block;
+position: relative;
+}
+.pagination-page .num {
+border: 2px solid #fff;
+margin-left: -2px;
+width: 37px;
+height: 39px;
+position: absolute;
+bottom: 0;
+left: 0;
+overflow: hidden;
+}
+.pagination-page {
+line-height: 40px;
+color: #fff;
+}
+.pagination-page .page-cur{
+position: relative;
+z-index: 2;
+background: #FFF;
+
+font-size: 18px;
+color: #d193b7;
+display: block;
+width: 38px;
+height: 41px;
+line-height: 41px;
+overflow: hidden;
+}
+.pagination-page a {
+padding: 11px 15px;
+font-size: 18px;
+line-height: 40px;
+position: relative;
+z-index: 1;
+color: #fff;
+text-decoration: none;
+}
+.pagination .page-prev {
+margin-right: 5px;
+border: 2px solid #fff;
+cursor: pointer;
+}
+.page-split {
+float: left;
+position: relative;
+z-index: 9999;
+background: #D193B7;
+width: 37px;
+height: 43px;
+}
+</style>
+</head>
+<body>
+<h2>EffectPaginations的demo</h2>
+
+
+<div id="container">
+        <div class="wrap">
+            <div class="pagination-page">
+                <div class="page-wrap page-siblings item">
+                    <a class="page-prev" href="">上一页</a>
+                </div>
+                <div class="page-wrap item num">
+                    <a href="" class="page">1</a>
+                </div>
+                <div class="page-wrap item num">
+                    <span class="page-cur">2</span>
+                </div>
+                <div class="page-wrap item num">
+                    <a href="" class="page">3</a>
+                </div>
+                <div class="page-wrap item num">
+                    <a href="" class="page">4</a>
+                </div>
+                <div class="page-wrap item num">
+                    <a href="" class="page">5</a>
+                </div>
+                <span class="page-split">...</span>
+                <div class="page-wrap page-siblings item">
+                    <a href="">下一页</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script>
+    var S = KISSY;
+    if (S.Config.debug) {
+        var debugPath = "http://localhost:5555/";
+        S.config({
+            packages:[
+                {
+                    name:"kg/effect-paginations/1.0.0",
+                    path:debugPath,
+                    charset:"utf-8",
+                    ignorePackageNameInUri: true
+                }
+            ]
+        });
+    }
+
+    S.use('kg/effect-paginations/1.0.0/index', function (S, EffectPaginations) {
+        new EffectPaginations();
+    })
+
+</script>
+</body>
+</html>
+

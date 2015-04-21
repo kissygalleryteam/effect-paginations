@@ -1,0 +1,1 @@
+KISSY.config("requires",{"kg/effect-paginations/1.0.0/index":["node","base"],"kg/effect-paginations/1.0.0/lib/main":["node","base"]});
