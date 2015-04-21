@@ -19,6 +19,9 @@ EffectPaginations。
         effectPaginations.on('end',function(){
             console.log('end');
         });
+        effectPaginations.on('mouseleave',function(){
+            console.log('mouseleave');
+        });
 
     })
 

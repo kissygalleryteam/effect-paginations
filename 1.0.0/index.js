@@ -52,6 +52,7 @@ var EffectPaginations = Base.extend({
                 complete : function(){
                     mask$.css('z-index','1');
                     itemWithMask$ = currentItem$;
+                    self.fire('end');
                 }
             });
         });
@@ -59,7 +60,7 @@ var EffectPaginations = Base.extend({
         // 动效结束
         container$.delegate('mouseleave', '.item', function(ev){
 
-            self.fire('end');
+            self.fire('mouseleave');
             
             pageAnimateTimer.isRunning() && pageAnimateTimer.stop(true);
             var currentTarget$ = $(ev.currentTarget);
